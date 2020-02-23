@@ -5,6 +5,8 @@
 
 {% include 'flash_messages.html' %}
 
+{{ form.csrf_token }}
+
 {# Add the appropriate method and enctype attributes to the form tag to allow for file uploads #}
 <form action="{{ url_for('upload') }}" method="POST" enctype="multipart/form-data">
 
