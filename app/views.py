@@ -51,7 +51,9 @@ def get_uploaded_images():
 
     for subdir, dirs, files in os.walk(rootdir + '/app/static/uploads'):
         for file in files:
-            imageList.append(file)
+            filepath = subdir + os.sep + file
+            if filepath.endswith(".jpg") or filepath.endswith(".png"):
+                imageList.append(file)
     return imageList
 
 @app.route('/files')

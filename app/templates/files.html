@@ -5,12 +5,16 @@
 <h1 class="page-header">Files</h1>
 
     {{ imageList.csrf_token }}
-    {% for imgs in imageList %}
-    <div class="container">
+    
+    <div class="grid-container">
+        {% for imgs in imageList %}
         <div class="grid-item">     
-            <img src="{{url_for('static', filename='uploads/' + imgs)}}"></img>      
+            <ul>
+                <li><img src="{{url_for('static', filename='uploads/' + imgs)}}"></img></li>
+            </ul>      
         </div>
-    </div>
         {% endfor %}
+    </div>
+        
 
 {% endblock %}
